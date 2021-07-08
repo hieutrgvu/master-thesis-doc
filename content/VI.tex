@@ -1,0 +1,34 @@
+\chapter{Kết Luận}
+\section{Kết quả đạt được}
+Qua nghiên cứu này, chúng tôi có thể khẳng định rằng với khả năng lưu nhớ quá khứ và khả năng học đặc trưng của dữ liệu, mạng nơ-ron học sâu LSTM đã thể hiện khả năng dự báo trên dữ liệu chuỗi thời gian. Và việc ứng dụng khả năng dự báo của mạng nơ-ron học sâu LSTM vào phát hiện bất thường. Từ đó, chúng tôi đề xuất mô hình LSTM xếp chồng với kỹ thuật dự báo nhiều bước vào bài toán con dự báo trong việc phát hiện bất thường bằng phương pháp dự báo. Đối với bài toán con phát hiện bất thường, chúng tôi thực hiện mô hình hoá sai số dự báo để xác định giá ngưỡng và thực hiện phát hiện bất thường dựa trên giá trị ngưỡng này.
+
+Luận văn đã khảo sát về khai phá dữ liệu chuỗi thời gian, nghiên cứu và đề xuất một phương pháp giải quyết bài toán phát hiện chuỗi bất thường trên dữ liệu chuỗi thời gian, bao gồm:
+\begin{itemize}
+\item Hiện thực giải thuật HOTSAX.
+\item Đề xuất giải thuật phát hiện chuỗi bất thường bằng dự báo dựa vào mạng LSTM.
+\item So sánh giải thuật đề xuất với giải thuật HOTSAX.
+\end{itemize}
+
+Luận văn tiến hành hiện thực giải thuật phát hiện chuỗi bất thường đề xuất, bao gồm các bước sau:
+\begin{itemize}
+\item Tiền xử lý dữ liệu.
+\item Huấn luyện mô hình.
+\item Tính toán sai số dự báo và mô hình hoá sai số dự báo.
+\item Xác định giá trị ngưỡng.
+\item Phát hiện bất thường
+\end{itemize}
+
+Luận văn đã cài đặt giải thuật đề xuất và giải thuật HOTSAX để tiến hành các kịch bản thực nghiệm, so sánh và đánh giá kết quả thực nghiệm. Các kết quả thực nghiệm trên 08 bộ dữ liệu thuộc các lĩnh vực khác nhau. Nhìn chung, cả hai phương pháp đều phát hiện được các chuỗi con bất thường đã được đánh dấu trên từng bộ dữ liệu. Nhờ hướng tiếp cận bằng dự báo, mô hình đề xuất đã khắc phục được hạn chế khi dựa vào kích thước cửa sổ trượt của giải thuật HOTSAX.
+
+Xét về thời gian thực thi của giải thuật đề xuất và giải thuật HOTSAX, mặc dù hai phương pháp có hai cách thức hoạt động khác nhau. Nhưng chúng tôi nhận thấy, thời gian thực thi của giải thuật HOTSAX phụ thuộc vào kích thước cửa sổ trượt và kích thước của bộ dữ liệu. Đối với giải thuật đề xuất, do dựa vào phương pháp dự báo, nên phần lớn thời gian thực thi dành cho quá trình huấn luyện, dẫn đến thời gian thực thi của giải thuật đề xuất dựa phụ thuộc vào quá trình huấn luyện, nói cách khác là phụ thuộc vào quá trình huấn luyện của mạng nơ-ron học sâu LSTM trên mỗi bộ dữ liệu.
+
+Mặt khác, kế thừa sức mạnh của mạng nơ-ron học sâu LSTM, giải thuật đề xuất có khả năng phát hiện bất thường trên các bộ dữ liệu đa biến \cite{st32}, trong khi giải thuật HOTSAX chỉ giới hạn ở các bộ dữ liệu đơn biến. Một lần nữa cho thấy khả năng các tiềm của hướng tiếp cận phát hiện bất thường theo phương pháp dự báo. Nhưng trong giới hạn của luận văn, chúng tôi chỉ thực hiện so sánh trên các bộ dữ liệu đơn biến.
+Bên cạnh đó, mô hình đề xuất lại gặp khó khăn đối với các bộ dữ liệu có ít dữ liệu huấn luyện, dẫn đến khả năng dự báo của mô hình đề xuất không tốt và có nhiều cảnh báo sai trong chặng phát hiện bất thường. Đây cũng là hạn chế của các mạng nơ-ron học sâu khi thiếu dữ liệu huấn luyện.
+
+\section{Hướng nghiên cứu tiếp theo}
+\begin{itemize}
+\item Khảo sát và phân tích đặc điểm của các tập dữ liệu thực nghiệm và tiến hành thực nghiệm trên nhiều tập dữ liệu có các đặc tính khác nhau để có thể rút ra được nhiều kết luận về giải thuật đề xuất.
+\item Nghiên cứu nhiều độ đo sai số khác và cải tiến giải thuật đề xuất để có thể tăng độ chính xác cho công tác dự báo.
+\item Xây dựng một mô hình dự báo dựa vào mạng LSTM bao gồm phát hiện bất thường, khử bất thường và dự báo để đem lại hiệu quả dự báo tốt hơn khi dữ liệu có chứa yếu tố bất thường.
+\item Mở rộng mô hình phát hiện bất thường dựa vào mạng LSTM để có thể phát hiện bất thường trên \textit{chuỗi thời gian đa biến} (multivariate time series).
+\end{itemize}
